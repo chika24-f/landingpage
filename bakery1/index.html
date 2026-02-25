@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Éclat Patisserie | Haute Pâtisserie Française</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --gold-silk: linear-gradient(135deg, #c5a467 0%, #e1c18d 50%, #b39256 100%);
+            --gold-text: #c5a467;
+            --black-onyx: #080808;
+            --cream-lace: #fdfaf5;
+            --overlay: rgba(10, 10, 10, 0.85);
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-onyx);
+            color: var(--cream-lace);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Texture */
+        .bg-texture {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #080808 100%);
+            z-index: -2;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 25 25 5-25 5-5 25-5-25-25-5 25-5z' fill='%23c5a467' fill-opacity='0.03'/%3E%3C/svg%3E");
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            letter-spacing: 0.5rem;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            background: var(--gold-silk);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--gold-text);
+            opacity: 0.8;
+            letter-spacing: 1rem;
+            margin-top: 10px;
+        }
+
+        /* Profile/Hero Section */
+        .hero-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 164, 103, 0.2);
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Product Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            padding: 6rem 0;
+        }
+
+        .img-container {
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .img-container img {
+            width: 100%;
+            display: block;
+            filter: grayscale(20%);
+            transition: 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .img-container:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .img-container::after {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px; right: -20px; bottom: -20px;
+            border: 1px solid var(--gold-text);
+            z-index: -1;
+        }
+
+        .product-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--gold-text);
+            line-height: 1.2;
+        }
+
+        .product-content p {
+            font-size: 1.1rem;
+            font-weight: 200;
+            margin-bottom: 3rem;
+            color: #ccc;
+        }
+
+        /* Buttons */
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border: 1px solid var(--gold-text);
+            color: var(--gold-text);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.3rem;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .cta-btn:hover {
+            background: var(--gold-text);
+            color: var(--black-onyx);
+            box-shadow: 0 0 30px rgba(197, 164, 103, 0.4);
+        }
+
+        /* Floating WA */
+        .wa-float {
+            position: fixed;
+            bottom: 40px; right: 40px;
+            width: 60px; height: 60px;
+            background: var(--gold-silk);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--black-onyx);
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .wa-float:hover { transform: translateY(-5px) rotate(10deg); }
+
+        footer {
+            padding: 6rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(197, 164, 103, 0.1);
+            font-size: 0.8rem;
+            letter-spacing: 0.2rem;
+            color: #666;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .product-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-card { padding: 2rem; }
+            .container { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-texture"></div>
+    <div class="bg-pattern"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">MAISON ÉCLAT</div>
+            <div class="tagline">Pâtisserie • Viennoiserie</div>
+        </header>
+
+        <section class="hero-card reveal">
+            <p>"Seni menciptakan rasa yang tidak hanya memanjakan lidah, namun juga menyentuh jiwa. Menggunakan bahan terbaik dari alam untuk mahakarya yang tak terlupakan."</p>
+        </section>
+
+        <section class="product-grid">
+            <div class="img-container reveal">
+                <img src="https://i.pinimg.com/736x/8d/cc/80/8dcc80746f27a6f8ef268bc4ef9935c4.jpg" alt="Gourmet Pastry">
+            </div>
+            <div class="product-content reveal">
+                <h2>Croissant au Chocolat</h2>
+                <p>Simfoni antara mentega AOP Prancis yang berlembar-lembar dengan kemewahan cokelat Valrhona Noir 70%. Setiap gigitan adalah perayaan tekstur—renyah di luar, namun meleleh lembut di dalam.</p>
+                <a href="https://wa.me/6282143720535" class="cta-btn">Réserver Sekarang</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 L'ÉCLAT PATISSERIE &bull; PARIS &bull; JAKARTA</p>
+        </footer>
+    </div>
+
+    <a href="https://wa.me/6282143720535" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Simple Reveal Effect
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger on load
+        reveal();
+    </script>
+</body>
+</html>

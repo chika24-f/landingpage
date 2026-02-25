@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Éclat Patisserie | Haute Pâtisserie Française Since 1923</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7h2Tk85PnUqLQd5hU7XJvR3jLzQqYd1w&libraries=places"></script>
+<style>
+:root {
+/* TRUE LUXURY WARM COLOR PALETTE */
+--cream: #6d1e26;
+--ivory: #36080f;
+--champagne: #000000;
+--warm-gold: #c5a455;
+--gold-accent: #d4b87a;
+--burgundy: #6d1e26;
+--burgundy-dark: #4a1017;
+--chocolate: #fffcfa;
+--text-dark: #b9b0a9;
+--taupe: #c9c2b8;
+--shadow-light: 0 6px 25px rgba(0, 0, 0, 0.08);
+--shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.12);
+--shadow-gold: 0 8px 30px rgba(197, 164, 85, 0.2);
+--transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+background-color: var(--cream);
+background-image: radial-gradient(circle at 10% 20%, rgba(197, 164, 85, 0.03) 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(109, 30, 38, 0.02) 0%, transparent 35%);
+color: var(--text-dark);
+font-family: 'Montserrat', sans-serif;
+line-height: 1.75;
+overflow-x: hidden;
+}
+
+/* === NAVIGATION - UPGRADED FOR ULTRA LUXURY === */
+nav {
+padding: 32px 0;
+position: fixed;
+width: 100%;
+z-index: 1000;
+background: rgba(253, 249, 243, 0.96);
+backdrop-filter: blur(12px);
+transition: var(--transition);
+border-bottom: 1px solid rgba(197, 164, 85, 0.2);
+box-shadow: none;
+}
+nav.scrolled {
+padding: 20px 0;
+background: rgba(253, 249, 243, 0.99);
+box-shadow: var(--shadow-light);
+}
+.nav-container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* 🔥 LOGO MAISON D'OR - PREMIUM GOLD FOIL EFFECT */
+.logo {
+font-family: 'Playfair Display', serif;
+font-size: 2.8rem;
+font-weight: 800;
+letter-spacing: 3px;
+color: var(--text-dark);
+position: relative;
+display: inline-block;
+text-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ✨ GOLD FOIL ANIMATION */
+.logo::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, 
+  rgba(212, 184, 122, 0.6), 
+  rgba(197, 164, 85, 0.8), 
+  rgba(212, 184, 122, 0.6));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 0.3;
+z-index: -1;
+animation: goldShimmer 8s infinite ease-in-out;
+}
+
+@keyframes goldShimmer {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+/* 💎 GOLD LINE UNDERNEATH */
+.logo::after {
+content: '';
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--warm-gold), transparent);
+border-radius: 2px;
+}
+
+.nav-menu {
+display: flex;
+list-style: none;
+gap: 38px;
+}
+.nav-menu a {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.98rem;
+font-weight: 500;
+color: var(--text-dark);
+text-decoration: none;
+position: relative;
+padding: 5px 0;
+letter-spacing: 1.2px;
+text-transform: uppercase;
+transition: var(--transition);
+}
+.nav-menu a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 1.5px;
+background-color: var(--warm-gold);
+transition: var(--transition);
+}
+.nav-menu a:hover::after {
+width: 80%;
+}
+
+/* === HERO SECTION - ICONIC LUXURY === */
+.hero {
+height: 95vh;
+background: 
+  /* Subtle paper texture */
+  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23fdf9f3"/><path d="M0,0 L200,200 M200,0 L0,200" stroke="%23f9f4e9" stroke-width="0.5" opacity="0.3"/></svg>'),
+  linear-gradient(rgba(42, 33, 26, 0.45), rgba(42, 33, 26, 0.6)),
+  url('https://images.unsplash.com/photo-1556210338-52467394f251?q=80&w=2000&auto=format&fit=crop');
+background-size: cover, cover, cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 20% 30%, rgba(197, 164, 85, 0.15) 0%, transparent 40%), 
+            radial-gradient(circle at 80% 70%, rgba(109, 30, 38, 0.1) 0%, transparent 45%);
+z-index: 1;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 850px;
+padding: 0 30px;
+color: var(--ivory);
+}
+
+/* 🏆 NAMA TOKO DI HERO - EMBOSSED GOLD LETTERING */
+.hero-content h1 {
+font-family: 'Playfair Display', serif;
+font-size: 6.2rem;
+font-weight: 800;
+line-height: 1;
+margin-bottom: 24px;
+letter-spacing: -1.5px;
+text-shadow: 
+  0 4px 12px rgba(0, 0, 0, 0.25),
+  0 0 0 2px rgba(197, 164, 85, 0.15);
+position: relative;
+}
+
+/* ✨ TEXTURE OVERLAY FOR DEPTH */
+.hero-content h1::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23d4b87a" stroke-width="0.2" opacity="0.2"/></svg>');
+-webkit-mask: linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%);
+mask: linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%);
+pointer-events: none;
+}
+
+.hero-content p {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.75rem;
+font-style: italic;
+opacity: 0.95;
+margin-bottom: 45px;
+letter-spacing: 1px;
+line-height: 1.55;
+}
+
+.btn {
+display: inline-block;
+padding: 18px 52px;
+background: transparent;
+color: var(--ivory);
+border: 1.8px solid var(--gold-accent);
+font-family: 'Montserrat', sans-serif;
+font-size: 0.98rem;
+font-weight: 600;
+letter-spacing: 3px;
+text-transform: uppercase;
+text-decoration: none;
+transition: var(--transition);
+position: relative;
+overflow: hidden;
+z-index: 1;
+border-radius: 30px;
+}
+
+.btn::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 0;
+height: 100%;
+background: linear-gradient(90deg, rgba(197, 164, 85, 0.25), transparent);
+z-index: -1;
+transition: var(--transition);
+}
+
+.btn:hover::before {
+width: 100%;
+}
+
+.btn:hover {
+transform: translateY(-4px) scale(1.03);
+box-shadow: var(--shadow-gold);
+}
+
+/* === SISA STYLE TETAP SAMA === */
+.section {
+padding: 130px 0;
+position: relative;
+}
+.container {
+max-width: 1350px;
+margin: 0 auto;
+padding: 0 40px;
+}
+.section-header {
+text-align: center;
+margin-bottom: 90px;
+position: relative;
+}
+.section-header::after {
+content: '';
+position: absolute;
+bottom: -25px;
+left: 50%;
+transform: translateX(-50%);
+width: 70px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--warm-gold), transparent);
+}
+.section-title {
+font-family: 'Playfair Display', serif;
+font-size: 3.6rem;
+font-weight: 700;
+color: var(--text-dark);
+position: relative;
+display: inline-block;
+letter-spacing: -0.5px;
+}
+.section-subtitle {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.45rem;
+color: var(--warm-gold);
+font-style: italic;
+margin-top: 18px;
+letter-spacing: 1.5px;
+}
+.profile-section {
+background-color: var(--ivory);
+border-top: 1px solid var(--taupe);
+border-bottom: 1px solid var(--taupe);
+}
+.profile-grid {
+display: grid;
+grid-template-columns: 1fr 1.1fr;
+gap: 80px;
+align-items: center;
+}
+.profile-text {
+position: relative;
+padding-left: 45px;
+}
+.profile-text::before {
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 3px;
+background: linear-gradient(to bottom, var(--warm-gold), var(--burgundy));
+}
+.profile-text h2 {
+font-family: 'Playfair Display', serif;
+font-size: 3.1rem;
+font-weight: 700;
+margin-bottom: 40px;
+color: var(--text-dark);
+letter-spacing: -0.5px;
+}
+.profile-text p {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.35rem;
+line-height: 1.85;
+color: var(--chocolate);
+margin-bottom: 30px;
+font-style: italic;
+position: relative;
+padding-left: 25px;
+border-left: 1.5px solid rgba(197, 164, 85, 0.3);
+}
+.profile-stats {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 35px;
+margin-top: 60px;
+}
+.stat-item {
+text-align: center;
+padding: 30px 20px;
+background-color: var(--cream);
+border-radius: 10px;
+transition: var(--transition);
+border: 1px solid var(--taupe);
+}
+.stat-item:hover {
+transform: translateY(-5px);
+border-color: var(--warm-gold);
+box-shadow: var(--shadow-light);
+}
+.stat-number {
+font-family: 'Playfair Display', serif;
+font-size: 2.8rem;
+font-weight: 700;
+color: var(--warm-gold);
+margin-bottom: 10px;
+line-height: 1;
+}
+.stat-label {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.95rem;
+color: var(--chocolate);
+letter-spacing: 1.8px;
+text-transform: uppercase;
+font-weight: 500;
+}
+.profile-gallery {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 30px;
+border-radius: 14px;
+overflow: hidden;
+}
+.gallery-item {
+height: 340px;
+border-radius: 10px;
+overflow: hidden;
+position: relative;
+box-shadow: var(--shadow-light);
+border: 1px solid var(--taupe);
+transition: var(--transition);
+}
+.gallery-item:hover {
+transform: scale(1.03);
+box-shadow: var(--shadow-medium);
+border-color: var(--warm-gold);
+}
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.6s ease;
+}
+.gallery-item:hover img {
+transform: scale(1.12);
+}
+.products-section {
+background-color: var(--champagne);
+border-top: 1px solid var(--taupe);
+border-bottom: 1px solid var(--taupe);
+}
+.products-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 28px;
+}
+.product-card {
+background-color: var(--ivory);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: var(--shadow-light);
+transition: var(--transition);
+border: 1px solid var(--taupe);
+}
+.product-card:hover {
+transform: translateY(-10px);
+box-shadow: var(--shadow-medium);
+border-color: var(--warm-gold);
+}
+.product-img {
+height: 250px;
+overflow: hidden;
+position: relative;
+}
+.product-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.7s ease;
+}
+.product-card:hover .product-img img {
+transform: scale(1.15);
+}
+.product-info {
+padding: 28px 22px 24px;
+text-align: center;
+position: relative;
+}
+.product-info::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 22px;
+right: 22px;
+height: 1px;
+background-color: var(--warm-gold);
+}
+.product-category {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.85rem;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(--warm-gold);
+margin-bottom: 12px;
+font-weight: 500;
+}
+.product-title {
+font-family: 'Playfair Display', serif;
+font-size: 1.55rem;
+font-weight: 600;
+margin-bottom: 10px;
+color: var(--text-dark);
+letter-spacing: 0.5px;
+}
+.product-price {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.15rem;
+font-weight: 600;
+color: var(--warm-gold);
+margin-top: 8px;
+}
+.testimonials-section {
+background-color: var(--ivory);
+padding: 110px 0;
+border-top: 1px solid var(--taupe);
+border-bottom: 1px solid var(--taupe);
+}
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 45px;
+max-width: 1050px;
+margin: 0 auto;
+}
+.testimonial-card {
+background-color: var(--cream);
+padding: 40px 35px;
+border-radius: 12px;
+box-shadow: var(--shadow-light);
+position: relative;
+border: 1px solid var(--taupe);
+transition: var(--transition);
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-medium);
+border-color: var(--warm-gold);
+}
+.testimonial-card::before {
+content: '"';
+position: absolute;
+top: 20px;
+left: 30px;
+font-family: 'Playfair Display', serif;
+font-size: 4.2rem;
+color: var(--gold-accent);
+opacity: 0.25;
+line-height: 1;
+font-weight: 800;
+}
+.testimonial-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.3rem;
+line-height: 1.75;
+color: var(--chocolate);
+position: relative;
+padding: 0 25px 0 60px;
+font-style: italic;
+margin-bottom: 25px;
+}
+.testimonial-author {
+display: block;
+font-family: 'Playfair Display', serif;
+font-size: 1.45rem;
+font-weight: 600;
+color: var(--text-dark);
+margin-top: 10px;
+padding-left: 60px;
+letter-spacing: 0.5px;
+}
+.testimonial-role {
+display: block;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.95rem;
+color: var(--chocolate);
+margin-top: 5px;
+padding-left: 60px;
+font-weight: 400;
+letter-spacing: 0.5px;
+}
+.booking-section {
+background-color: var(--champagne);
+border-top: 1px solid var(--taupe);
+border-bottom: 1px solid var(--taupe);
+}
+.booking-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 70px;
+}
+.booking-info h2 {
+font-family: 'Playfair Display', serif;
+font-size: 2.9rem;
+font-weight: 700;
+margin-bottom: 35px;
+color: var(--text-dark);
+letter-spacing: -0.5px;
+}
+.booking-info p {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.3rem;
+line-height: 1.85;
+color: var(--chocolate);
+margin-bottom: 40px;
+font-style: italic;
+}
+.booking-steps {
+display: grid;
+grid-template-columns: 1fr;
+gap: 35px;
+margin-top: 45px;
+}
+.step-item {
+display: flex;
+gap: 22px;
+align-items: flex-start;
+}
+.step-icon {
+min-width: 55px;
+height: 55px;
+background: linear-gradient(135deg, var(--warm-gold), var(--burgundy));
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--ivory);
+font-size: 1.4rem;
+flex-shrink: 0;
+box-shadow: 0 6px 18px rgba(197, 164, 85, 0.3);
+}
+.step-content h3 {
+font-family: 'Playfair Display', serif;
+font-size: 1.55rem;
+font-weight: 600;
+margin-bottom: 8px;
+color: var(--text-dark);
+}
+.step-content p {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.05rem;
+color: var(--chocolate);
+line-height: 1.75;
+font-style: italic;
+}
+.booking-form {
+background-color: var(--ivory);
+padding: 50px;
+border-radius: 14px;
+box-shadow: var(--shadow-light);
+border: 1px solid var(--taupe);
+}
+.form-group {
+margin-bottom: 28px;
+}
+.form-group label {
+display: block;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.95rem;
+margin-bottom: 12px;
+color: var(--text-dark);
+font-weight: 500;
+letter-spacing: 0.8px;
+}
+.form-control {
+width: 100%;
+padding: 15px 22px;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.05rem;
+color: var(--text-dark);
+background-color: var(--cream);
+border: 1.5px solid var(--taupe);
+border-radius: 8px;
+transition: var(--transition);
+}
+.form-control:focus {
+outline: none;
+border-color: var(--warm-gold);
+box-shadow: 0 0 0 3px rgba(197, 164, 85, 0.18);
+}
+textarea.form-control {
+min-height: 160px;
+resize: vertical;
+}
+select.form-control {
+appearance: none;
+background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c5a455' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 18px center;
+background-size: 18px;
+}
+.submit-btn {
+width: 100%;
+padding: 18px;
+background: linear-gradient(135deg, var(--warm-gold), #b8944a);
+color: var(--ivory);
+border: none;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.05rem;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+border-radius: 8px;
+cursor: pointer;
+transition: var(--transition);
+box-shadow: 0 6px 20px rgba(197, 164, 85, 0.25);
+}
+.submit-btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 28px rgba(197, 164, 85, 0.35);
+letter-spacing: 2.5px;
+}
+.map-section {
+padding: 100px 0;
+background-color: var(--ivory);
+border-top: 1px solid var(--taupe);
+border-bottom: 1px solid var(--taupe);
+}
+.map-container {
+height: 550px;
+border-radius: 16px;
+overflow: hidden;
+box-shadow: var(--shadow-medium);
+position: relative;
+border: 3px solid var(--ivory);
+}
+#google-map {
+width: 100%;
+height: 100%;
+}
+.map-overlay {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(253, 249, 243, 0.92);
+padding: 22px 45px;
+border-radius: 35px;
+box-shadow: var(--shadow-medium);
+text-align: center;
+max-width: 85%;
+border: 1px solid var(--taupe);
+}
+.map-overlay h3 {
+font-family: 'Playfair Display', serif;
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--text-dark);
+margin-bottom: 10px;
+}
+.map-overlay p {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.15rem;
+color: var(--chocolate);
+font-style: italic;
+}
+.whatsapp-section {
+text-align: center;
+padding: 100px 0;
+background: linear-gradient(135deg, rgba(109, 30, 38, 0.04) 0%, rgba(197, 164, 85, 0.03) 100%), var(--champagne);
+border-top: 1px solid var(--taupe);
+}
+.whatsapp-container {
+max-width: 750px;
+margin: 0 auto;
+padding: 0 25px;
+}
+.whatsapp-icon {
+font-size: 4rem;
+color: #25D366;
+margin-bottom: 35px;
+text-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+}
+.whatsapp-title {
+font-family: 'Playfair Display', serif;
+font-size: 2.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: var(--text-dark);
+}
+.whatsapp-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.45rem;
+color: var(--chocolate);
+margin-bottom: 45px;
+font-style: italic;
+line-height: 1.75;
+max-width: 650px;
+margin-left: auto;
+margin-right: auto;
+}
+.whatsapp-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+padding: 18px 50px;
+background: linear-gradient(135deg, #128C7E, #075E54);
+color: white;
+text-decoration: none;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.1rem;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+border-radius: 10px;
+box-shadow: 0 8px 25px rgba(7, 94, 84, 0.4);
+transition: var(--transition);
+border: 2px solid var(--ivory);
+}
+.whatsapp-btn:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 35px rgba(7, 94, 84, 0.55);
+letter-spacing: 2.5px;
+}
+.whatsapp-btn i {
+font-size: 1.8rem;
+}
+footer {
+background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 100%);
+color: var(--ivory);
+padding: 90px 0 60px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+footer::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(90deg, transparent, var(--warm-gold), transparent);
+}
+.footer-logo {
+font-family: 'Playfair Display', serif;
+font-size: 2.8rem;
+font-weight: 700;
+letter-spacing: 4px;
+margin-bottom: 35px;
+color: var(--gold-accent);
+}
+.footer-tagline {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem;
+font-style: italic;
+max-width: 800px;
+margin: 0 auto 50px;
+line-height: 1.8;
+opacity: 0.95;
+letter-spacing: 0.8px;
+}
+.footer-contact {
+max-width: 700px;
+margin: 0 auto;
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.15rem;
+line-height: 2.2;
+opacity: 0.9;
+}
+.footer-contact i {
+color: var(--gold-accent);
+margin-right: 10px;
+font-size: 1.1rem;
+}
+.whatsapp-cta {
+position: fixed;
+bottom: 40px;
+right: 40px;
+width: 75px;
+height: 75px;
+border-radius: 50%;
+background: linear-gradient(135deg, #128C7E, #075E54);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2.1rem;
+box-shadow: 0 8px 25px rgba(7, 94, 84, 0.5), 0 0 15px rgba(37, 211, 102, 0.4);
+text-decoration: none;
+z-index: 1000;
+border: 3px solid var(--ivory);
+transition: var(--transition);
+}
+.whatsapp-cta:hover {
+transform: scale(1.12) translateY(-4px);
+box-shadow: 0 12px 35px rgba(7, 94, 84, 0.65), 0 0 20px rgba(37, 211, 102, 0.55);
+}
+@media (max-width: 1300px) {
+.products-grid { grid-template-columns: repeat(4, 1fr); }
+.profile-grid { grid-template-columns: 1fr; gap: 60px; }
+.profile-text::before { left: 50%; transform: translateX(-50%); width: 3px; height: 80px; top: -30px; }
+.booking-container { grid-template-columns: 1fr; gap: 60px; }
+.map-container { height: 500px; }
+}
+@media (max-width: 1000px) {
+.nav-menu { gap: 28px; }
+.hero { height: auto; min-height: 100vh; padding: 130px 0 90px; }
+.hero-content h1 { font-size: 4.2rem; }
+.hero-content p { font-size: 1.45rem; }
+.section-title { font-size: 3.0rem; }
+.products-grid { grid-template-columns: repeat(3, 1fr); }
+.product-img { height: 230px; }
+.testimonials-grid { grid-template-columns: 1fr; }
+.map-container { height: 450px; }
+}
+@media (max-width: 768px) {
+nav { padding: 24px 0; }
+.logo { font-size: 2.0rem; }
+.hero-content h1 { font-size: 3.4rem; }
+.hero-content p { font-size: 1.35rem; }
+.section { padding: 90px 0; }
+.section-title { font-size: 2.6rem; }
+.profile-text h2 { font-size: 2.5rem; }
+.profile-text p { font-size: 1.25rem; }
+.stat-number { font-size: 2.4rem; }
+.gallery-item { height: 280px; }
+.products-grid { grid-template-columns: repeat(2, 1fr); }
+.product-img { height: 250px; }
+.product-title { font-size: 1.45rem; }
+.testimonial-text { font-size: 1.25rem; padding: 0 20px 0 55px; }
+.testimonial-author { font-size: 1.4rem; padding-left: 55px; }
+.testimonial-role { font-size: 0.92rem; padding-left: 55px; }
+.booking-form { padding: 40px 30px; }
+.map-container { height: 400px; }
+.map-overlay { padding: 18px 35px; }
+.map-overlay h3 { font-size: 1.65rem; }
+.whatsapp-title { font-size: 2.3rem; }
+.whatsapp-text { font-size: 1.35rem; }
+.footer-logo { font-size: 2.4rem; }
+.footer-tagline { font-size: 1.45rem; }
+.whatsapp-cta { width: 65px; height: 65px; font-size: 1.9rem; }
+}
+@media (max-width: 480px) {
+.hero-content h1 { font-size: 2.8rem; }
+.section-title { font-size: 2.3rem; }
+.profile-text h2 { font-size: 2.2rem; }
+.stat-number { font-size: 2.1rem; }
+.gallery-item { height: 240px; }
+.products-grid { grid-template-columns: 1fr; }
+.product-img { height: 300px; }
+.product-title { font-size: 1.55rem; }
+.testimonial-card { padding: 35px 30px; }
+.testimonial-text { font-size: 1.2rem; }
+.testimonial-author { font-size: 1.35rem; }
+.booking-form { padding: 35px 25px; }
+.form-control { padding: 14px 20px; font-size: 1rem; }
+.map-container { height: 350px; }
+.map-overlay { padding: 15px 28px; border-radius: 28px; }
+.map-overlay h3 { font-size: 1.55rem; }
+.map-overlay p { font-size: 1.1rem; }
+.whatsapp-icon { font-size: 3.4rem; }
+.whatsapp-title { font-size: 2.0rem; }
+.whatsapp-text { font-size: 1.25rem; }
+.whatsapp-btn { padding: 16px 40px; font-size: 1.05rem; flex-direction: column; gap: 12px; }
+.whatsapp-btn i { font-size: 1.7rem; }
+.footer-logo { font-size: 2.1rem; }
+.footer-tagline { font-size: 1.35rem; }
+.footer-contact { font-size: 1.1rem; line-height: 2.1; }
+.whatsapp-cta { width: 60px; height: 60px; font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+<style>
+    :root {
+        --primary-gold: #D4AF37; /* Gold klasik */
+        --accent-gold: #f3e6ab;  /* Gold muda untuk hover */
+        --bg-dark: #020617;      /* Navy gelap / Hitam */
+        --text-silver: #E2E8F0;  /* Silver lembut untuk teks */
+    }
+
+    nav {
+        background-color: rgba(88, 23, 23, 0.95); /* Efek semi-transparan */
+        backdrop-filter: blur(10px);
+        padding: 1.2rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .logo {
+        font-family: 'Cinzel', serif; /* Font elegan untuk logo */
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        /* Warna gradient emas */
+        background: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-menu {
+        list-style: none;
+        display: flex;
+        gap: 2.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: var(--text-silver);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.4s ease;
+        position: relative;
+    }
+
+    /* Efek Hover Garis Bawah */
+    .nav-menu li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1.5px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--primary-gold);
+        transition: width 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+        color: var(--primary-gold);
+    }
+
+    .nav-menu li a:hover::after {
+        width: 100%;
+    }
+</style>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">MAISON D'OR</div>
+        <ul class="nav-menu">
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#pesan">Pemesanan</a></li>
+            <li><a href="#map">Lokasi</a></li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    /* Hero Section Styling */
+    .hero {
+        position: relative;
+        height: 100vh; /* Memenuhi tinggi layar penuh */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* Gambar latar belakang premium bertema bakery */
+        background: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+
+    /* Overlay untuk memastikan teks mudah dibaca */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        /* Gradasi gelap dari bawah ke atas */
+        background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.4) 50%, rgba(2, 6, 23, 0.6) 100%);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #f8fafc;
+        padding: 0 20px;
+        max-width: 900px;
+    }
+
+    .hero-content h1 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(3rem, 8vw, 5.5rem); /* Ukuran responsif */
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        animation: fadeInDown 1.2s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-bottom: 3rem;
+        color: rgba(248, 250, 252, 0.8);
+        text-transform: uppercase;
+        animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) 0.3s backwards;
+    }
+
+    /* Styling Tombol Premium */
+    .btn {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        background: transparent;
+        color: #fbbf24;
+        border: 2px solid #fbbf24;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        transition: all 0.4s ease;
+        animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) 0.6s backwards;
+    }
+
+    .btn:hover {
+        background: #fbbf24;
+        color: #020617;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(251, 191, 36, 0.2);
+    }
+
+    /* Keyframes Animasi */
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsif untuk Mobile */
+    @media (max-width: 640px) {
+        .hero-content h1 { font-size: 2.8rem; }
+        .hero-content p { font-size: 0.8rem; letter-spacing: 1.5px; }
+        .btn { width: 100%; padding: 1rem; }
+    }
+</style>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>L'Artisanat<br>Français</h1>
+        <p>Créations pâtissières exquises depuis 1923 • Paris • Jakarta</p>
+        <a href="#collection" class="btn">DÉCOUVRIR LA COLLECTION</a>
+    </div>
+</section>
+
+<!-- Profile Section -->
+<section class="section profile-section" id="profil">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Notre Héritage</h2>
+<p class="section-subtitle">Trois générations d'excellence</p>
+</div>
+<div class="profile-grid">
+<div class="profile-text">
+<h2>L'Âme de la Tradition</h2>
+<p>Fondée en 1923 au cœur de Paris, Maison d'Or incarne l'essence même de l'artisanat français d'exception. Chaque matin, l'arôme envoûtant du beurre Charentes-Poitou et de la vanille Bourbon fraîchement travaillés emplit notre atelier.</p>
+<p>Nous ne créons pas simplement des pâtisseries ; nous façonnons des héritages sensoriels à travers des techniques de fermentation lente ancestrales et une sélection rigoureuse des ingrédients les plus nobles. Notre engagement envers l'excellence absolue nous a conduits à Jakarta.</p>
+<div class="profile-stats">
+<div class="stat-item">
+<div class="stat-number">101</div>
+<div class="stat-label">Années d'Héritage</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">3</div>
+<div class="stat-label">Générations</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">50+</div>
+<div class="stat-label">Médailles d'Or</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">15K+</div>
+<div class="stat-label">Clients Prestigieux</div>
+</div>
+</div>
+</div>
+<div class="profile-gallery">
+<div class="gallery-item">
+<img src="https://i.pinimg.com/736x/dd/05/5a/dd055ae11109ab63b75d4a6962dffef9.jpg" alt="Bakery Interior">
+</div>
+<div class="gallery-item">
+<img src="https://i.pinimg.com/736x/12/ac/60/12ac606896dfc98f4806b7acababed67.jpg" alt="Master Chef">
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Boutique Paris">
+</div>
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=800&auto=format&fit=crop" alt="Macaron Artistry">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Products Section - 15 Items -->
+<section class="section products-section" id="collection">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Collection Exclusive</h2>
+<p class="section-subtitle">Quinze pièces d'exception</p>
+</div>
+<div class="products-grid">
+<!-- Products 1-15 -->
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop" alt="Croissant d'Or">
+</div>
+<div class="product-info">
+<div class="product-category">01. Viennoiserie</div>
+<div class="product-title">Croissant d'Or</div>
+<div class="product-price">Rp 85.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=600&auto=format&fit=crop" alt="Macaron Impérial">
+</div>
+<div class="product-info">
+<div class="product-category">02. Confiserie</div>
+<div class="product-title">Macaron Impérial</div>
+<div class="product-price">Rp 65.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=600&auto=format&fit=crop" alt="Fraise de Luxe">
+</div>
+<div class="product-info">
+<div class="product-category">03. Gâteau</div>
+<div class="product-title">Fraise de Luxe</div>
+<div class="product-price">Rp 450.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" alt="Pain Sourdough">
+</div>
+<div class="product-info">
+<div class="product-category">04. Boulangerie</div>
+<div class="product-title">Pain Sourdough Héritage</div>
+<div class="product-price">Rp 125.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/736x/ee/05/90/ee05900df496f109154eae52f41f02db.jpg" alt="Éclair Royal">
+</div>
+<div class="product-info">
+<div class="product-category">05. Pâtisserie</div>
+<div class="product-title">Éclair Royal</div>
+<div class="product-price">Rp 75.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=600&auto=format&fit=crop" alt="Pain au Levain">
+</div>
+<div class="product-info">
+<div class="product-category">06. Boulangerie</div>
+<div class="product-title">Pain au Levain Artisanal</div>
+<div class="product-price">Rp 95.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/1200x/7d/57/ab/7d57ab3e554ccac19a7b1657c82e419e.jpg" alt="Tarte Citron">
+</div>
+<div class="product-info">
+<div class="product-category">07. Tarte</div>
+<div class="product-title">Tarte au Citron Caviar</div>
+<div class="product-price">Rp 85.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop" alt="Chocolat Noir">
+</div>
+<div class="product-info">
+<div class="product-category">08. Chocolaterie</div>
+<div class="product-title">Chocolat Noir Grand Cru</div>
+<div class="product-price">Rp 145.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop" alt="Opéra">
+</div>
+<div class="product-info">
+<div class="product-category">09. Gâteau</div>
+<div class="product-title">Opéra Classique</div>
+<div class="product-price">Rp 95.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/736x/ad/01/6f/ad016fe7d09a43cfbd9f30822102ac24.jpg" alt="Mille-feuille">
+</div>
+<div class="product-info">
+<div class="product-category">10. Pâtisserie</div>
+<div class="product-title">Mille-feuille Vanille</div>
+<div class="product-price">Rp 88.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/1200x/4c/3f/13/4c3f132fca34c78f452baeb0bb2d41c8.jpg" alt="Brioche">
+</div>
+<div class="product-info">
+<div class="product-category">11. Viennoiserie</div>
+<div class="product-title">Brioche Truffée</div>
+<div class="product-price">Rp 78.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop" alt="Macaron Rose">
+</div>
+<div class="product-info">
+<div class="product-category">12. Confiserie</div>
+<div class="product-title">Macaron Rose Lyophilisée</div>
+<div class="product-price">Rp 72.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/736x/0e/ae/7f/0eae7f82c8efcb8c986e78c9916ff409.jpg" alt="Saint-Honoré">
+</div>
+<div class="product-info">
+<div class="product-category">13. Pâtisserie</div>
+<div class="product-title">Saint-Honoré Framboise</div>
+<div class="product-price">Rp 115.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/1200x/15/8b/89/158b89ca93b311d960ad3fc393182892.jpg" alt="Baguette">
+</div>
+<div class="product-info">
+<div class="product-category">14. Boulangerie</div>
+<div class="product-title">Baguette Tradition</div>
+<div class="product-price">Rp 45.000</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://i.pinimg.com/1200x/81/17/0e/81170edaa92e4b33033cacc713cc4c6e.jpg" alt="Paris-Brest">
+</div>
+<div class="product-info">
+<div class="product-category">15. Pâtisserie</div>
+<div class="product-title">Paris-Brest Praliné</div>
+<div class="product-price">Rp 92.000</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="testimoni">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Témoignages</h2>
+<p class="section-subtitle">Voix de l'excellence</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<p class="testimonial-text">Une expérience gustative d'une rare élégance. Chaque bouchée du Croissant d'Or révèle une texture feuilletée à la perfection, évoquant les meilleurs souvenirs des boulangeries parisiennes du Faubourg Saint-Honoré.</p>
+<span class="testimonial-author">— Michel Dupont</span>
+<span class="testimonial-role">Critique Gastronomique, Le Figaro</span>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">J'ai commandé le gâteau Fraise de Luxe pour l'anniversaire de ma fille et ce fut un véritable chef-d'œuvre. Non seulement magnifique à regarder avec ses fraises fraîches et sa crème Chantilly maison, mais divinement délicieux.</p>
+<span class="testimonial-author">— Sarah Johnson</span>
+<span class="testimonial-role">CEO, TechCorp International</span>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">En tant que chef moi-même, je suis extrêmement exigeant sur la qualité. Maison d'Or dépasse toutes mes attentes. Leur Pain Sourdough Héritage est tout simplement exceptionnel - une fermentation lente de 48 heures qui révèle des arômes incomparables.</p>
+<span class="testimonial-author">— Thomas Laurent</span>
+<span class="testimonial-role">Chef Exécutif, Restaurant Étoilé</span>
+</div>
+<div class="testimonial-card">
+<p class="testimonial-text">Chaque visite à Maison d'Or est un voyage sensoriel. Leur collection de macarons est une explosion de saveurs parfaitement équilibrées. Je recommande vivement leur coffret découverte pour les amateurs de douceurs raffinées.</p>
+<span class="testimonial-author">— Emma Wilson</span>
+<span class="testimonial-role">Influenceuse Culinaire, 500K+ Abonnés</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Booking Section -->
+<section class="section booking-section" id="pesan">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Réservation Exclusive</h2>
+<p class="section-subtitle">Commandez votre création pâtissière</p>
+</div>
+<div class="booking-container">
+<div class="booking-info">
+<h2>Notre Processus Artisanal</h2>
+<p>Chaque création Maison d'Or est façonnée à la main avec des ingrédients frais du jour, sélectionnés avec le plus grand soin. Pour garantir la perfection de votre commande, nous recommandons de réserver au moins 48 heures à l'avance.</p>
+<p>Notre service de livraison premium avec emballage isotherme préserve l'intégrité et la fraîcheur de vos pâtisseries jusqu'à votre porte, dans toute la région Jakarta, avec des créneaux horaires précis.</p>
+<div class="booking-steps">
+<div class="step-item">
+<div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="step-content">
+<h3>Sélection & Réservation</h3>
+<p>Choisissez vos créations préférées et réservez en ligne ou par WhatsApp</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-icon"><i class="fas fa-magic"></i></div>
+<div class="step-content">
+<h3>Création Artisanale</h3>
+<p>Nos maîtres pâtissiers préparent votre commande avec dévotion</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-icon"><i class="fas fa-gift"></i></div>
+<div class="step-content">
+<h3>Emballage Prestige</h3>
+<p>Présentation élégante avec ruban doré et carte personnalisée</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-icon"><i class="fas fa-truck"></i></div>
+<div class="step-content">
+<h3>Livraison Exclusive</h3>
+<p>Livraison premium avec créneau horaire précis et suivi en temps réel</p>
+</div>
+</div>
+</div>
+</div>
+<div class="booking-form">
+<form id="bookingForm">
+<div class="form-group">
+<label for="name">Nom Complet</label>
+<input type="text" id="name" class="form-control" placeholder="Votre nom complet" required>
+</div>
+<div class="form-group">
+<label for="phone">Téléphone WhatsApp</label>
+<input type="tel" id="phone" class="form-control" placeholder="+62 8xx xxxx xxxx" required>
+</div>
+<div class="form-group">
+<label for="product">Sélection Produit</label>
+<select id="product" class="form-control" required>
+<option value="">Choisissez une création exclusive</option>
+<option value="1">Croissant d'Or - Rp 85.000</option>
+<option value="2">Macaron Impérial - Rp 65.000</option>
+<option value="3">Fraise de Luxe - Rp 450.000</option>
+<option value="4">Pain Sourdough Héritage - Rp 125.000</option>
+<option value="5">Éclair Royal - Rp 75.000</option>
+</select>
+</div>
+<div class="form-group">
+<label for="quantity">Quantité</label>
+<input type="number" id="quantity" class="form-control" min="1" value="1" required>
+</div>
+<div class="form-group">
+<label for="date">Date Souhaitée</label>
+<input type="date" id="date" class="form-control" required>
+</div>
+<div class="form-group">
+<label for="notes">Notes Spéciales</label>
+<textarea id="notes" class="form-control" placeholder="Allergies, messages personnalisés, ou instructions spéciales"></textarea>
+</div>
+<button type="submit" class="submit-btn">CONFIRMER LA RÉSERVATION</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Google Maps Section -->
+<section class="map-section" id="map">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title" style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #fbbf24;">Notre Boutique</h2>
+            <p class="section-subtitle" style="color: #94a3b8;">Jl. Senopati No. 89, Jakarta Selatan</p>
+        </div>
+        
+        <div class="map-container">
+            <div id="google-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.273678317765!2d106.80521347587445!3d-6.227602360987398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1458e016661%3A0x6b77c5c796545199!2sJl.%20Senopati%20No.89%2C%20RT.6%2FRW.3%2C%20Selong%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="map-overlay">
+                <h3>Maison d'Or</h3>
+                <p class="section-subtitle" style="color: #94a3b8;">Jl. Senopati No. 89, Jakarta Selatan 12190</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Section -->
+<section class="whatsapp-section">
+<div class="whatsapp-container">
+<div class="whatsapp-icon">
+<i class="fab fa-whatsapp"></i>
+</div>
+<h2 class="whatsapp-title">Service Client Privé</h2>
+<p class="whatsapp-text">Notre équipe dédiée est disponible pour vous accompagner dans le choix de vos créations pâtissières et répondre à toutes vos questions avec une attention personnalisée.</p>
+<a href="https://wa.me/6282143720535" class="whatsapp-btn">
+<i class="fab fa-whatsapp"></i>
+<span>CONTACTER PAR WHATSAPP</span>
+</a>
+</div>
+</section>
+
+<style>
+    /* Menentukan warna dasar footer agar kontras tetap terjaga */
+    footer {
+        background-color: #020617; /* Navy Gelap */
+        padding: 60px 20px;
+        text-align: center;
+        color: #f8fafc;
+    }
+
+    /* Mengubah Logo menjadi warna Emas Gradient */
+    .footer-logo {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        /* Efek Emas */
+        background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    /* Mengubah Tagline menjadi warna Silver-Grey yang lembut */
+    .footer-tagline {
+        color: #94a3b8; /* Slate grey agar tidak terlalu mencolok */
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    /* Mengubah warna teks kontak dan ikon */
+    .footer-contact p {
+        color: #cbd5e1; /* Silver terang */
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Memberikan warna Emas pada Ikon saja agar lebih menarik */
+    .footer-contact i {
+        color: #fbbf24; /* Amber/Gold */
+        margin-right: 8px;
+    }
+
+    /* Efek hover halus pada teks kontak */
+    .footer-contact p:hover {
+        color: #fbbf24;
+        transition: 0.3s ease;
+    }
+</style>
+
+<footer>
+    <div class="footer-logo">MAISON D'OR</div>
+    <p class="footer-tagline">Où chaque création pâtissière raconte l'histoire d'un savoir-faire français transmis depuis trois générations avec passion, excellence et un dévouement inégalé à l'art ultime de la pâtisserie</p>
+    <div class="footer-contact">
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Senopati No. 89, Jakarta Selatan 12190</p>
+        <p><i class="fas fa-clock"></i> Ouvert tous les jours • 07:00 - 21:00 WIB</p>
+        <p><i class="fas fa-phone"></i> +62 21 2996 8888 • <i class="fas fa-envelope"></i> bonjour@maisondor.id</p>
+    </div>
+</footer>
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/6282143720535" class="whatsapp-cta" title="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// Navigation scroll effect
+window.addEventListener('scroll', function() {
+const nav = document.querySelector('nav');
+if (window.scrollY > 100) {
+nav.classList.add('scrolled');
+} else {
+nav.classList.remove('scrolled');
+}
+});
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if(targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if(targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 90,
+behavior: 'smooth'
+});
+}
+});
+});
+// Form submission
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+alert(`Merci ${name} ! Votre réservation exclusive a été confirmée. Notre équipe vous contactera sous 15 minutes via WhatsApp.`);
+this.reset();
+});
+// Set min date
+document.addEventListener('DOMContentLoaded', function() {
+const today = new Date();
+const tomorrow = new Date();
+tomorrow.setDate(today.getDate() + 1);
+const year = tomorrow.getFullYear();
+const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+const day = String(tomorrow.getDate()).padStart(2, '0');
+document.getElementById('date').setAttribute('min', `${year}-${month}-${day}`);
+document.getElementById('date').value = `${year}-${month}-${day}`;
+});
+// Google Maps
+
+</script>
+</body>
+</html>

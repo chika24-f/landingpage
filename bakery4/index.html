@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON DE PÂTISSERIE | Artisanal French Bakery Since 1923</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7h2Tk85PnUqLQd5hU7XJvR3jLzQqYd1w&libraries=places"></script>
+    <style>
+        :root {
+            /* Warm Luxury Color Palette */
+            --ivory: #fcfaf6;
+            --cream: #fdf8f0;
+            --champagne: #f9f4e9;
+            --taupe: #e8e2d9;
+            --gold: #c5a455;
+            --gold-light: #d4c8a8;
+            --burgundy: #6d1e26;
+            --chocolate: #5c4636;
+            --text-dark: #2a211a;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.09);
+            --shadow-gold: 0 6px 25px rgba(197, 164, 85, 0.18);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--ivory);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 28px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(252, 250, 246, 0.97);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(197, 164, 85, 0.15);
+        }
+
+        nav.scrolled {
+            padding: 18px 0;
+            background: rgba(252, 250, 246, 0.99);
+            box-shadow: var(--shadow-light);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 1.5px;
+            background-color: var(--gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            position: relative;
+            padding: 4px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 70%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 95vh;
+            background: linear-gradient(rgba(42, 33, 26, 0.45), rgba(42, 33, 26, 0.55)), 
+                        url('https://images.unsplash.com/photo-1556210338-52467394f251?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 25px;
+            color: var(--ivory);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 600;
+            line-height: 1.05;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 42px;
+            background: transparent;
+            color: var(--ivory);
+            border: 1px solid var(--gold-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: rgba(197, 164, 85, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Section styling */
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 75px;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            background-color: var(--cream);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .profile-text {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .profile-text::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2.5px;
+            background: var(--gold);
+        }
+
+        .profile-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.9rem;
+            font-weight: 600;
+            margin-bottom: 35px;
+            color: var(--text-dark);
+        }
+
+        .profile-text p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--chocolate);
+            margin-bottom: 28px;
+            font-style: italic;
+            position: relative;
+            padding-left: 22px;
+            border-left: 1px solid rgba(197, 164, 85, 0.3);
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--ivory);
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid var(--taupe);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-light);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--chocolate);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .profile-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-item {
+            height: 310px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid var(--taupe);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Products Section */
+        .products-section {
+            background-color: var(--champagne);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .product-card {
+            background-color: var(--ivory);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid var(--taupe);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold);
+        }
+
+        .product-img {
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            padding: 25px 20px 20px;
+            text-align: center;
+        }
+
+        .product-info::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: var(--gold);
+            opacity: 0.7;
+        }
+
+        .product-category {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--gold);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--cream);
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: var(--ivory);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            border: 1px solid var(--taupe);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 18px;
+            left: 28px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            color: var(--gold-light);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            line-height: 1.75;
+            color: var(--chocolate);
+            position: relative;
+            padding: 0 20px 0 55px;
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .testimonial-author {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-top: 12px;
+            padding-left: 55px;
+        }
+
+        .testimonial-role {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            color: var(--chocolate);
+            margin-top: 4px;
+            padding-left: 55px;
+            font-weight: 400;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--champagne);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 22px;
+        }
+
+        .contact-icon {
+            min-width: 50px;
+            height: 50px;
+            background-color: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .contact-details p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: var(--chocolate);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .contact-form {
+            background-color: var(--ivory);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--taupe);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            border: 1px solid var(--taupe);
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(197, 164, 85, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--gold);
+            color: var(--ivory);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .submit-btn:hover {
+            background-color: #b8944a;
+            transform: translateY(-2px);
+        }
+
+        /* Google Maps Section */
+        .map-section {
+            padding: 90px 0;
+            background-color: var(--ivory);
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            border: 2px solid var(--ivory);
+        }
+
+        #google-map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(252, 250, 246, 0.93);
+            padding: 18px 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            max-width: 85%;
+            border: 1px solid var(--taupe);
+        }
+
+        .map-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .map-overlay p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--chocolate);
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--burgundy) 0%, #4a1017 100%);
+            color: var(--ivory);
+            padding: 80px 0 50px;
+            text-align: center;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            color: var(--gold-light);
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 750px;
+            margin: 0 auto 45px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-contact {
+            max-width: 650px;
+            margin: 0 auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 2.1;
+            opacity: 0.85;
+        }
+
+        .footer-contact i {
+            color: var(--gold-light);
+            margin-right: 8px;
+        }
+
+        /* WhatsApp CTA */
+        .whatsapp-cta {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            z-index: 1000;
+            border: 2px solid var(--ivory);
+            transition: var(--transition);
+        }
+
+        .whatsapp-cta:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .profile-text::before {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2.5px;
+                height: 80px;
+                top: -30px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .map-container {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 120px 0 80px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.9rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-img {
+                height: 210px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 22px 0;
+            }
+            
+            .logo {
+                font-size: 2.0rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 3.1rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .profile-text h2 {
+                font-size: 2.4rem;
+            }
+            
+            .profile-text p {
+                font-size: 1.2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.3rem;
+            }
+            
+            .gallery-item {
+                height: 260px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-img {
+                height: 280px;
+            }
+            
+            .product-title {
+                font-size: 1.4rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.2rem;
+                padding: 0 18px 0 50px;
+            }
+            
+            .testimonial-author {
+                font-size: 1.35rem;
+                padding-left: 50px;
+            }
+            
+            .contact-form {
+                padding: 35px 25px;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+            
+            .map-overlay {
+                padding: 15px 30px;
+                border-radius: 25px;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.55rem;
+            }
+            
+            .footer-logo {
+                font-size: 2.3rem;
+            }
+            
+            .footer-tagline {
+                font-size: 1.4rem;
+            }
+            
+            .whatsapp-cta {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.7rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .profile-text h2 {
+                font-size: 2.1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.1rem;
+            }
+            
+            .gallery-item {
+                height: 230px;
+            }
+            
+            .product-img {
+                height: 320px;
+            }
+            
+            .product-title {
+                font-size: 1.45rem;
+            }
+            
+            .testimonial-card {
+                padding: 30px 25px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.15rem;
+            }
+            
+            .testimonial-author {
+                font-size: 1.3rem;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .form-control {
+                padding: 13px 18px;
+                font-size: 0.98rem;
+            }
+            
+            .map-container {
+                height: 320px;
+            }
+            
+            .map-overlay {
+                padding: 14px 25px;
+                border-radius: 22px;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.45rem;
+            }
+            
+            .map-overlay p {
+                font-size: 1.05rem;
+            }
+            
+            .footer-logo {
+                font-size: 2.1rem;
+            }
+            
+            .footer-tagline {
+                font-size: 1.35rem;
+            }
+            
+            .footer-contact {
+                font-size: 1.05rem;
+                line-height: 2.0;
+            }
+            
+            .whatsapp-cta {
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">MAISON DE PÂTISSERIE</div>
+                <ul class="nav-menu">
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <style>
+    /* Hero Section Styling */
+    .hero {
+        position: relative;
+        height: 100vh; /* Memenuhi layar penuh */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        /* Ganti URL di bawah dengan gambar pilihan Anda */
+        background: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    }
+
+    /* Overlay Hitam Transparan agar teks terbaca jelas */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2; /* Menempatkan teks di atas overlay */
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-family: 'Cinzel', serif; /* Font klasik/mewah */
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 2px;
+        opacity: 0.9;
+        animation: fadeInUp 1.2s ease-out;
+    }
+
+    /* Styling Tombol */
+    .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        background-color: #fbbf24; /* Warna Emas/Amber */
+        color: #000;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        border-radius: 0; /* Kotak tajam untuk kesan premium */
+        transition: all 0.3s ease;
+        border: 2px solid #fbbf24;
+    }
+
+    .btn:hover {
+        background-color: transparent;
+        color: #fbbf24;
+        transform: translateY(-5px);
+    }
+
+    /* Animasi muncul */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 768px) {
+        .hero-content h1 { font-size: 2.5rem; }
+        .hero-content p { font-size: 1rem; }
+    }
+</style>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>L'Artisanat Français</h1>
+        <p>Créations pâtissières exquises depuis 1923</p>
+        <a href="#produk" class="btn">DÉCOUVRIR NOS CRÉATIONS</a>
+    </div>
+</section>
+
+    <!-- Profile Section -->
+    <section class="section profile-section" id="profil">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Histoire</h2>
+                <p class="section-subtitle">Trois générations d'excellence</p>
+            </div>
+            <div class="profile-grid">
+                <div class="profile-text">
+                    <h2>L'Âme de la Tradition</h2>
+                    <p>Fondée en 1923 au cœur de Paris, Maison de Pâtisserie perpétue l'artisanat français avec dévotion. Chaque matin, l'arôme du beurre Charentes-Poitou et de la vanille Bourbon fraîchement travaillés emplit notre atelier.</p>
+                    <p>Nous façonnons des héritages sensoriels à travers des techniques de fermentation lente ancestrales et une sélection rigoureuse des ingrédients les plus nobles. Notre engagement envers l'excellence nous a conduits à Jakarta, où nous continuons cet héritage avec passion.</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">101</div>
+                            <div class="stat-label">Années</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Générations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Médailles</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15K+</div>
+                            <div class="stat-label">Clients</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-gallery">
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/1200x/87/4b/54/874b54b948865b0e969a63f4e50adae3.jpg" alt="Bakery Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/12/ac/60/12ac606896dfc98f4806b7acababed67.jpg" alt="Master Chef">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/1200x/42/4b/12/424b12986036d380d327120ffd6cc06f.jpg" alt="Boutique Paris">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/72/25/4c/72254c2375244242f3fdf6cf51335e89.jpg" alt="Macaron Artistry">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section" id="produk">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Créations</h2>
+                <p class="section-subtitle">Huit pièces d'exception</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop" alt="Croissant">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">01. Viennoiserie</div>
+                        <div class="product-title">Butter Croissant</div>
+                        <div class="product-price">Rp 45.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=600&auto=format&fit=crop" alt="Macarons">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">02. Confiserie</div>
+                        <div class="product-title">Macaron Collection</div>
+                        <div class="product-price">Rp 35.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=600&auto=format&fit=crop" alt="Cake">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">03. Gâteau</div>
+                        <div class="product-title">Fraise de Luxe</div>
+                        <div class="product-price">Rp 350.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" alt="Sourdough">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">04. Boulangerie</div>
+                        <div class="product-title">Heritage Sourdough</div>
+                        <div class="product-price">Rp 85.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/8a/87/2e/8a872e4f7bfd98eb678ad7c1a90ff480.jpg" alt="Éclair">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">05. Pâtisserie</div>
+                        <div class="product-title">Royal Éclair</div>
+                        <div class="product-price">Rp 55.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=600&auto=format&fit=crop" alt="Bread">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">06. Boulangerie</div>
+                        <div class="product-title">Pain au Levain</div>
+                        <div class="product-price">Rp 75.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.pinimg.com/736x/05/c6/49/05c649843b30f03ed3f214b829c86f1f.jpg" alt="Tart">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">07. Tarte</div>
+                        <div class="product-title">Tarte au Citron</div>
+                        <div class="product-price">Rp 65.000</div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop" alt="Chocolate">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">08. Chocolaterie</div>
+                        <div class="product-title">Chocolat Noir</div>
+                        <div class="product-price">Rp 125.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimoni">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Témoignages</h2>
+                <p class="section-subtitle">Voix de nos clients distingués</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Une expérience gustative d'une rare élégance. Chaque bouchée du croissant au beurre révèle une texture feuilletée à la perfection, évoquant les meilleurs souvenirs des boulangeries parisiennes du Faubourg Saint-Honoré.</p>
+                    <span class="testimonial-author">— Michel Dupont</span>
+                    <span class="testimonial-role">Critique Gastronomique</span>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">J'ai commandé le gâteau Fraise de Luxe pour l'anniversaire de ma fille et ce fut un véritable chef-d'œuvre. Non seulement magnifique à regarder, mais divinement délicieux. Un service impeccable et attentionné.</p>
+                    <span class="testimonial-author">— Sarah Johnson</span>
+                    <span class="testimonial-role">Client Fidèle</span>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">En tant que chef moi-même, je suis extrêmement exigeant sur la qualité. Maison de Pâtisserie dépasse toutes mes attentes. Leur Heritage Sourdough est tout simplement exceptionnel - une fermentation lente qui révèle des arômes incomparables.</p>
+                    <span class="testimonial-author">— Thomas Laurent</span>
+                    <span class="testimonial-role">Chef Exécutif</span>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Chaque visite à Maison de Pâtisserie est un voyage sensoriel. Leur collection de macarons est une explosion de saveurs parfaitement équilibrées. Je recommande vivement leur coffret découverte pour les amateurs de douceurs raffinées.</p>
+                    <span class="testimonial-author">— Emma Wilson</span>
+                    <span class="testimonial-role">Food Blogger</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="kontak">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Informations & Réservation</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>Jl. Senopati No. 89<br>Jakarta Selatan 12190</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horaires</h4>
+                            <p>Lundi - Dimanche<br>07:00 - 21:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+62 21 2996 8888<br>+62 812 3456 7890 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Courriel</h4>
+                            <p>bonjour@maisondepatisserie.id</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom Complet</label>
+                            <input type="text" id="name" class="form-control" placeholder="Votre nom..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="votre.email@domaine.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+62 8xx xxxx xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">ENVOYER LE MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="map-section">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+            <h2 class="section-title">Notre Boutique</h2>
+            <p class="section-subtitle">Jl. Senopati No. 89, Jakarta Selatan</p>
+        </div>
+        <div class="map-container">
+            <div id="google-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2652431478144!2d106.80587747587445!3d-6.228721661000676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1503932731b%3A0xc63e26210f5451e0!2sJl.%20Senopati%20No.89%2C%20RT.6%2FRW.3%2C%20Selong%2C%20Kec.%20Kebayoran%20Baru%2C%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-overlay">
+                <h3>MAISON DE PÂTISSERIE</h3>
+                <p>Jl. Senopati No. 89, Jakarta Selatan 12190</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">MAISON DE PÂTISSERIE</div>
+        <p class="footer-tagline">Où chaque création pâtissière raconte l'histoire d'un savoir-faire français transmis depuis trois générations avec passion et dévouement</p>
+        <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Jl. Senopati No. 89, Jakarta Selatan 12190</p>
+            <p><i class="fas fa-clock"></i> Ouvert tous les jours • 07:00 - 21:00 WIB</p>
+            <p><i class="fas fa-phone"></i> +62 21 2996 8888 • <i class="fas fa-envelope"></i> bonjour@maisondepatisserie.id</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/6282143720535" class="whatsapp-cta" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Merci ${name} ! Votre message a été envoyé. Notre équipe vous contactera sous peu.`);
+            this.reset();
+        });
+
+        // Google Maps Initialization
+       
+    </script>
+</body>
+</html>
